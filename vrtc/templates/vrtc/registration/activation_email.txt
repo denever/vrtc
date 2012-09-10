@@ -1,0 +1,7 @@
+Hi!
+
+This is you activation key {{activation_key}} for your account on {{site}}.
+
+{{site}}{% url registration_activate activation_key %}
+
+It will expire in {{expiration_days}}.

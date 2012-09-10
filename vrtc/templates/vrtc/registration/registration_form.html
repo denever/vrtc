@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+{% block title %}CVCR Registration{% endblock %}
+
+{% block navbartext %}
+{% endblock %}
+
+{% block content-top %}
+{% endblock %}
+
+{% block content %}
+<form action="{% url registration_register %}" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Register" />
+</form>
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
+
+{% block extrascript %}
+{% endblock %}
