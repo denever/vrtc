@@ -1,0 +1,56 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <!-- Bootstrap Responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    {% block extra_head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Calabrian Virtual Cancer Register</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+	    {% block navbartext %}
+	    {% endblock %}	  
+          <ul class="nav">
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {% block content-top %}
+      {% endblock %}
+
+      {% block content %}
+      {% endblock %}
+    </div>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {% block extra_scripts %}{% endblock %}
+    <script type="text/javascript">
+      {% block extrascript %}
+      {% endblock %}
+    </script>
+  </body>
+</html>

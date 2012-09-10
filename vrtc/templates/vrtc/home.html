@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block title %}CVCR Home{% endblock %}
+
+{% block navbartext %}
+{% if user.is_anonymous %}	    
+{% trans "Welcome visitor would you like to" %}<a title="Register" href="{% url registration_register %}"><i class="icon-pencil"></i></a>
+</p>
+{% else %}
+<p class="navbar-text pull-right">
+  {% trans "Welcome" %} {{ user }} {% trans "Last login" %}: {{ user.last_login }}
+  <a title="Logout" href="{% url auth_logout %}"><i class="icon-remove"></i></a>
+</p>
+{% endif %}
+{% endblock %}
+
+{% block content-top %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
+
+{% block extrascript %}
+{% endblock %}
