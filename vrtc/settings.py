@@ -161,3 +161,5 @@ EMAIL_HOST_USER="ludovico.dalpozzo@gmail.com"
 EMAIL_HOST_PASSWORD="vivaaltai"
 EMAIL_PORT="587"
 EMAIL_USE_TLS="True"
+
+AUTH_PROFILE_MODULE = "accounts.UserProfile"

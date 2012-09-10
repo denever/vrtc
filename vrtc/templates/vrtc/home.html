@@ -28,16 +28,20 @@
 <h2>{% trans "Welcome visitor would you like to" %}</h2>
 <ul>
 <li>
-  <a title="Register" href="{% url registration_register %}">
-    <i class="icon-pencil"></i>Register
+  <a title="{% trans "Register" %}" href="{% url registration_register %}">
+    <i class="icon-pencil"></i>{% trans "Register" %}
   </a>
 </li>
 <li>
-  <a title="Login" href="{% url auth_login %}">
-    <i class="icon-user"></i>Login
+  <a title="{% trans "Login" %}" href="{% url auth_login %}">
+    <i class="icon-user"></i>{% trans "Login" %}
   </a>
 </li>
 </ul>
+{% else %}
+<a title="{% trans "Register a new patient" %}" href="{% url patient-create %}">
+  <i class="icon-pencil"></i>{% trans "Register a new patient" %}
+</a>
 {% endif %}
 {% endblock %}
 
