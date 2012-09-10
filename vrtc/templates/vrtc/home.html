@@ -7,8 +7,10 @@
 {% block title %}CVCR Home{% endblock %}
 
 {% block navbartext %}
-{% if user.is_anonymous %}	    
-{% trans "Welcome visitor would you like to" %}<a title="Register" href="{% url registration_register %}"><i class="icon-pencil"></i></a>
+{% if user.is_anonymous %}
+{% trans "Welcome visitor would you like to register" %}
+<a title="Register" href="{% url registration_register %}"><i class="icon-pencil"></i></a>
+<a title="Login" href="{% url auth_login %}"><i class="icon-user"></i></a>
 </p>
 {% else %}
 <p class="navbar-text pull-right">
@@ -22,6 +24,21 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_anonymous %}
+<h2>{% trans "Welcome visitor would you like to" %}</h2>
+<ul>
+<li>
+  <a title="Register" href="{% url registration_register %}">
+    <i class="icon-pencil"></i>Register
+  </a>
+</li>
+<li>
+  <a title="Login" href="{% url auth_login %}">
+    <i class="icon-user"></i>Login
+  </a>
+</li>
+</ul>
+{% endif %}
 {% endblock %}
 
 {% block extra_scripts %}
