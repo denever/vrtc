@@ -5,3 +5,4 @@ from patients.models import Patient
 class PatientForm(forms.ModelForm):
     class Meta:
         model = Patient
+        exclude = ('record_by',)
