@@ -19,6 +19,9 @@ class Patient(models.Model):
     previous_location = models.CharField(_('Address'), max_length=200)
     job = models.CharField(_('Job'), max_length=200)
     hse = models.CharField(_('Harmful substance exposition'), max_length=200)
+    record_by = models.ForeignKey('accounts.UserProfile',
+                                  related_name='patients_created',
+                                  verbose_name=_('Recorded by'))
 
     def __unicode__(self):
         return "%s: %s %s" % (_("Patient"), self.surname, self.name)

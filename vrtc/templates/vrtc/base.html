@@ -31,8 +31,19 @@
         <a class="brand" href="{% url home %}">Calabrian Virtual Cancer Register</a>
         <div class="nav-collapse collapse">
           <p class="navbar-text pull-right">
-	    {% block navbartext %}
-	    {% endblock %}	  
+            {% block navbartext %}
+            {% if user.is_anonymous %}
+            {% trans "Welcome visitor would you like to register" %}
+            <a title="Register" href="{% url registration_register %}"><i class="icon-pencil"></i></a>
+            <a title="Login" href="{% url auth_login %}"><i class="icon-user"></i></a>
+          </p>
+          {% else %}
+          <p class="navbar-text pull-right">
+            {% trans "Welcome" %} <a href="{% url profile %}">{{ user }}</a> {% trans "Last login" %}: {{ user.last_login }}
+            <a title="Logout" href="{% url auth_logout %}"><i class="icon-remove"></i></a>
+          </p>
+          {% endif %}
+          {% endblock %}
           <ul class="nav">
             </ul>
           </div><!--/.nav-collapse -->

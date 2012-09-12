@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block title %}CVCR Patients{% endblock %}
+
+{# {% block navbartext %} {% endblock %} #}
+
+{% block content-top %}
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Patient" %}</h1>
+<table class="table table-hover">
+  <tr><td>{% trans "Name" %}</td><td>{{ patient.name }}</tr>
+  <tr><td>{% trans "Surname" %}</td><td>{{ patient.surname }}</tr>
+  <tr><td>{% trans "Birth date" %}</td><td>{{ patient.birth_date }}</tr>
+  <tr><td>{% trans "Gender" %}</td><td>{{ patient.gender }}</tr>
+  <tr><td>{% trans "Address" %}</td><td>{{ patient.address }}</tr>
+  <tr><td>{% trans "Diagnosis" %}</td><td>{{ patient.diagnosis }}</tr>
+  <tr><td>{% trans "Diagnosis Date" %}</td><td>{{ patient.diagnosis_date }}</tr>
+  <tr><td>{% trans "Previous Location" %}</td><td>{{ patient.previous_location }}</tr>
+  <tr><td>{% trans "Job" %}</td><td>{{ patient.job }}</tr>
+  <tr><td>{% trans "Hse" %}</td><td>{{ patient.hse }}</tr>      
+</table>
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
+
+{% block extrascript %}
+{% endblock %}

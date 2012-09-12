@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block title %}CVCR Patients{% endblock %}
+
+{# {% block navbartext %} {% endblock %} #}
+
+{% block content-top %}
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Patients" %}</h1>
+<table id="patients" class="table table-hover">
+  <thead>
+    <tr>
+      <th>{% trans "Name" %}</th>
+      <th>{% trans "Surname" %}</th>
+      <th>{% trans "Actions" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for patient in patients %}
+    <tr>
+      <td>
+        <a class="tablelink" href="{% url patient-detail patient.id %}">
+          {{ patient.surname }} {{ patient.name }}</a>
+      </td>
+      <td>
+        <div class="btn-group">
+          <a href="{% url patient-edit patient.id %}">
+            <button title="{% trans "Edit" %}" class="btn">
+              <i class="icon-edit"></i>
+            </button>
+          </a>
+          <a href="{% url patient-delete patient.id %}">
+            <button title="{% trans "Delete" %}" class="btn">
+              <i class="icon-remove"></i>
+            </button>
+          </a>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
+
+{% block extrascript %}
+{% endblock %}

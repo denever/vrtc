@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block title %}{% trans "Account" %} {{ user }}{% endblock %}
+{% block title2 %}{% trans "Account" %} {{ user }}{% endblock %}
+
+{% block content %}
+{% trans "Account" %} {{ user }}
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#tab1" data-toggle="tab">{% trans "Patients recorded by" %} {{ user }}</a>
+    </li>
+    <li><a href="#tab2" data-toggle="tab">{% trans "recorded by" %} {{ user }}</a></li>
+    <li><a href="#tab3" data-toggle="tab">{% trans "recorded by" %} {{ user }}</a></li>
+  </ul>
+   <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+    </div>
+    <div class="tab-pane" id="tab2">
+    </div>
+    <div class="tab-pane" id="tab3">
+    </div>
+   </div>
+</div>
+{% endblock %}

@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'accounts',
     'patients',
     'registration',
 )
@@ -157,7 +158,7 @@ LOGGING = {
 ACCOUNT_ACTIVATION_DAYS = 7
 
 EMAIL_HOST="smtp.gmail.com"
-EMAIL_HOST_USER="ludovico.dalpozzo@gmail.com"
+EMAIL_HOST_USER="manueldezante@gmail.com"
 EMAIL_HOST_PASSWORD="vivaaltai"
 EMAIL_PORT="587"
 EMAIL_USE_TLS="True"
