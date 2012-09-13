@@ -11,12 +11,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'vrtc',                      # Or path to database file if using sqlite3.
-        'USER': 'vrtc',                      # Not used with sqlite3.
-        'PASSWORD': 'natale',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+	'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+	'NAME': 'vrtc',                      # Or path to database file if using sqlite3.
+	'USER': 'vrtc',                      # Not used with sqlite3.
+	'PASSWORD': 'natale',                  # Not used with sqlite3.
+	'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+	'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -135,33 +135,33 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
+	'require_debug_false': {
+	    '()': 'django.utils.log.RequireDebugFalse'
+	}
     },
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
+	'mail_admins': {
+	    'level': 'ERROR',
+	    'filters': ['require_debug_false'],
+	    'class': 'django.utils.log.AdminEmailHandler'
+	}
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
+	'django.request': {
+	    'handlers': ['mail_admins'],
+	    'level': 'ERROR',
+	    'propagate': True,
+	},
     }
 }
 
 ACCOUNT_ACTIVATION_DAYS = 7
 AUTH_PROFILE_MODULE = "accounts.UserProfile"
+SERVER_EMAIL="root@vrtc.hopto.org"
+DEFAULT_FROM_EMAIL="webmaster@vrtc.hopto.org"
 
 EMAIL_HOST=""
 EMAIL_HOST_USER=""
 EMAIL_HOST_PASSWORD=""
 EMAIL_PORT="587"
 EMAIL_USE_TLS="True"
-
-
