@@ -3,8 +3,9 @@ from django.db import models
 # importing User for UserProfile
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
-
+from django.core.mail import mail_admins
 from django.dispatch import receiver
+
 from registration.signals import user_activated
 
 # Create your models here.
