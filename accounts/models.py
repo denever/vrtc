@@ -11,7 +11,7 @@ from registration.signals import user_activated
 class UserProfile(models.Model):
     user_types = (
         (u'M', _(u'Medician')),
-        (u'S', _(u'Simple')),
+        (u'P', _(u'Patient')),
         )
 
     user = models.ForeignKey(User, unique=True)
