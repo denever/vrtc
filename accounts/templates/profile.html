@@ -14,12 +14,12 @@
 </p>
 <p>
   <ul class="unstyled">
-    <li><a href="{% url user-settype 'M' %}">{% trans "Medician" %}</a></li>
+    <li><a href="{% url user-settype 'D' %}">{% trans "Doctor" %}</a></li>
     <li><a href="{% url user-settype 'P' %}">{% trans "Patient" %}</a></li>
   </ul>
 </p>
 {% elif user.get_profile.user_type == 'M' %}
-{% include "profile_medician.html" %}
+{% include "profile_doctor.html" %}
 {% else %}
 {% include "profile_patient.html" %}
 {% endif %}

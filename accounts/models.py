@@ -11,7 +11,7 @@ from registration.signals import user_activated
 # Create your models here.
 class UserProfile(models.Model):
     user_types = (
-	(u'M', _(u'Medician')),
+	(u'D', _(u'Doctor')),
 	(u'P', _(u'Patient')),
 	)
 
