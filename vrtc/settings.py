@@ -30,7 +30,7 @@ TIME_ZONE = 'Europe/Rome'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'it-it'
 
-SITE_ID = 2
+SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -156,11 +156,12 @@ LOGGING = {
 }
 
 ACCOUNT_ACTIVATION_DAYS = 7
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
 
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_HOST_USER="manueldezante@gmail.com"
-EMAIL_HOST_PASSWORD="vivaaltai"
+EMAIL_HOST=""
+EMAIL_HOST_USER=""
+EMAIL_HOST_PASSWORD=""
 EMAIL_PORT="587"
 EMAIL_USE_TLS="True"
 
-AUTH_PROFILE_MODULE = "accounts.UserProfile"
+
