@@ -4,7 +4,7 @@
 {% block extra_head %}
 {% endblock %}
 
-{% block title %}CVCR Patients{% endblock %}
+{% block title %}{% trans "CVCR Patients" %}{% endblock %}
 
 {# {% block navbartext %} {% endblock %} #}
 
@@ -23,7 +23,7 @@
   <tr><td>{% trans "Diagnosis Date" %}</td><td>{{ patient.diagnosis_date }}</tr>
   <tr><td>{% trans "Previous Location" %}</td><td>{{ patient.previous_location }}</tr>
   <tr><td>{% trans "Job" %}</td><td>{{ patient.job }}</tr>
-  <tr><td>{% trans "Hse" %}</td><td>{{ patient.hse }}</tr>      
+  <tr><td>{% trans "Hse" %}</td><td>{{ patient.hse }}</tr>
 </table>
 {% endblock %}
 

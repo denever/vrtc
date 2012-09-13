@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block title %}{% trans "Account" %} {{ user }}{% endblock %}
+{% block title2 %}{% trans "Account" %} {{ user }}{% endblock %}
+
+{% block content %}
+{% trans "Account" %} {{ user }} {{ user.get_profile.user_type }}
+{% endblock %}

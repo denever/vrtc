@@ -8,39 +8,19 @@
 {% block title2 %}{% trans "Account" %} {{ user }}{% endblock %}
 
 {% block content %}
-{% trans "Account" %} {{ user }}
-<div class="tabbable">
-  <ul class="nav nav-tabs">
-    <li class="active">
-      <a href="#tab1" data-toggle="tab">{% trans "Patients recorded by" %} {{ user }}</a>
-    </li>
-    <li><a href="#tab2" data-toggle="tab">{% trans "recorded by" %} {{ user }}</a></li>
-    <li><a href="#tab3" data-toggle="tab">{% trans "recorded by" %} {{ user }}</a></li>
+{% if not user.get_profile.user_type %}
+<p class="lead">
+  {% trans "Are you a" %}
+</p>
+<p>
+  <ul class="unstyled">
+    <li><a href="{% url user-settype 'M' %}">{% trans "Medician" %}</a></li>
+    <li><a href="{% url user-settype 'P' %}">{% trans "Patient" %}</a></li>
   </ul>
-   <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-      <table class="table table-hover">
-	<caption>{% trans "Patients recorded by" %} {{ user }}</caption>
-	<thead>
-	  <tr>
-	    <th>{% trans "Surname" %}</th>
-	    <th>{% trans "Name" %}</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  {% for patient in user.get_profile.patients_created.all %}
-          <tr>
-	    <td>{{ patient.surname }}</td>
-	    <td>{{ patient.name }}</td>	    
-	  </tr>
-	  {% endfor %}
-	</tbody>
-      </table>
-    </div>
-    <div class="tab-pane" id="tab2">
-    </div>
-    <div class="tab-pane" id="tab3">
-    </div>
-   </div>
-</div>
+</p>
+{% elif user.get_profile.user_type == 'M' %}
+{% include "profile_medician.html" %}
+{% else %}
+{% include "profile_patient.html" %}
+{% endif %}
 {% endblock %}

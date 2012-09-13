@@ -40,7 +40,7 @@
           {% else %}
           <p class="navbar-text pull-right">
             {% trans "Welcome" %} <a href="{% url profile %}">{{ user }}</a> {% trans "Last login" %}: {{ user.last_login }}
-            <a title="Logout" href="{% url auth_logout %}"><i class="icon-remove"></i></a>
+            <a title="Logout" href="{% url auth_logout %}"><i class="icon-off"></i></a>
           </p>
           {% endif %}
           {% endblock %}
