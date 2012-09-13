@@ -4,7 +4,7 @@
 {% block extra_head %}
 {% endblock %}
 
-{% block title %}CVCR Home{% endblock %}
+{% block title %}{% trans "CVCR Home" %}{% endblock %}
 
 {% block navbartext %}
 {% endblock %}
@@ -13,6 +13,7 @@
 {% endblock %}
 
 {% block content %}
+<h1>{% trans "Your account is now active. Please" <a href="{% url login %}">{% trans "Login" %}</a></h1>
 {% endblock %}
 
 {% block extra_scripts %}

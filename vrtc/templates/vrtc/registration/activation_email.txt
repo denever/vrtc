@@ -4,6 +4,6 @@ This is you activation key {{activation_key}} for your account on http://{{site}
 
 Click here to activate your account or copy and paste the following url
 
-http://{{site}}{% url registration_activate activation_key %}"
+http://{{site}}{% url registration_activate activation_key %}
 
 This activation key will expire in {{expiration_days}} days.
