@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
-<body>
-<h2>Hi!</h2>
+Hi!
 
-<p>This is you activation key {{activation_key}} for your account on http://{{site}}.</p>
+This is you activation key {{activation_key}} for your account on http://{{site}}.
 
-<a href="http://{{site}}{% url registration_activate activation_key %}">Click here to activate your account</a>
+Click here to activate your account or copy and paste the following url
 
-<p>It will expire in {{expiration_days}} days.</p>
-</body>
-</html>
+http://{{site}}{% url registration_activate activation_key %}"
+
+This activation key will expire in {{expiration_days}} days.
