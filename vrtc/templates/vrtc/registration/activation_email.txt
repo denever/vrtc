@@ -1,7 +1,14 @@
-Hi!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<h2>Hi!</h2>
 
-This is you activation key {{activation_key}} for your account on {{site}}.
+<p>This is you activation key {{activation_key}} for your account on http://{{site}}.</p>
 
-{{site}}{% url registration_activate activation_key %}
+<a href="http://{{site}}{% url registration_activate activation_key %}">Click here to activate your account</a>
 
-It will expire in {{expiration_days}}.
+<p>It will expire in {{expiration_days}} days.</p>
+</body>
+</html>
