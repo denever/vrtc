@@ -18,7 +18,7 @@ class UserProfile(models.Model):
     user_type = models.CharField(_('Type'), max_length=2, choices=user_types, null=True)
 
     def __unicode__(self):
-	return self.user.username
+	return '%s <%s>' % (self.user.username, self.user.email)
 
     class Meta:
 	verbose_name = _('Account')
