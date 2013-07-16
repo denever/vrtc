@@ -18,7 +18,7 @@
     <li><a href="{% url user-settype 'P' %}">{% trans "Patient" %}</a></li>
   </ul>
 </p>
-{% elif user.get_profile.user_type == 'M' %}
+{% elif user.get_profile.user_type == 'D' %}
 {% include "profile_doctor.html" %}
 {% else %}
 {% include "profile_patient.html" %}
