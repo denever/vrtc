@@ -1,0 +1,3 @@
+[submodule "django-crispy-forms"]
+	path = django-crispy-forms
+	url = https://github.com/maraujop/django-crispy-forms.git
