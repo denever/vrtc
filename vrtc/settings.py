@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'accounts',
     'patients',
     'registration',
+    'crispy_forms'
 )
 
 # A sample logging configuration. The only tangible logging
