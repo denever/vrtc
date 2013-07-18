@@ -10,7 +10,7 @@ class Patient(models.Model):
         )
 
     name = models.CharField(_('Name'), max_length=200)
-    surname = models.CharField(_('Name'), max_length=200)
+    surname = models.CharField(_('Surname'), max_length=200)
     birth_date = models.DateField(_('Birth date'))
     gender = models.CharField(_('Gender'), max_length=2, choices=gender_choices)
     address = models.CharField(_('Address'), max_length=200)
