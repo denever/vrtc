@@ -2,40 +2,48 @@
 {% load i18n %}
 
 {% block extra_head %}
+
+{{ form.media }}
+
 {% endblock %}
 
 {% block title %}{% trans "CVCR Register new patient" %}{% endblock %}
 
 {% block content-top %}
 {% endblock %}
+    
+{% load crispy_forms_tags %}
 
 {% block content %}
-<form class="form-horizontal" action="{% url patient-create %}" method="post">
-  {% csrf_token %}
-  <legend>{% trans "CVCR Register new patient" %}</legend>
-  {% if form.non_field_errors %}
-  <div class="control-group error">
-    {% for error in form.non_field_errors %}
-    <span class="help-inline">{{ error }}</span>
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% for field in form %}
-  <div class="control-group {% if field.errors %}error{% endif %}">
-    <label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label>
-    <div class="controls">
-      {{ field }}
-      {% if field.errors %}
-      {% for error in field.errors %}
-      <span class="help-inline">{{ error }}</span>
-      {% endfor %}
-      {% endif %}
-    </div>
-  </div>
-  {% endfor %}
-  <button class="bnt" type="submit">{% trans "Register" %}</button>
-</form>
-{% endblock %}
+
+{% crispy form %}
+
+{% endblock %}							 
+<!-- <form class="form-horizontal" action="{% url patient-create %}" method="post"> -->
+<!--   {% csrf_token %} -->
+<!--   <legend>{% trans "CVCR Register new patient" %}</legend> -->
+<!--   {% if form.non_field_errors %} -->
+<!--   <div class="control-group error"> -->
+<!--     {% for error in form.non_field_errors %} -->
+<!--     <span class="help-inline">{{ error }}</span> -->
+<!--     {% endfor %} -->
+<!--   </div> -->
+<!--   {% endif %} -->
+<!--   {% for field in form %} -->
+<!--   <div class="control-group {% if field.errors %}error{% endif %}"> -->
+<!--     <label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label> -->
+<!--     <div class="controls"> -->
+<!--       {{ field }} -->
+<!--       {% if field.errors %} -->
+<!--       {% for error in field.errors %} -->
+<!--       <span class="help-inline">{{ error }}</span> -->
+<!--       {% endfor %} -->
+<!--       {% endif %} -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   {% endfor %} -->
+<!--   <button class="bnt" type="submit">{% trans "Register" %}</button> -->
+<!-- </form> -->
 
 {% block extra_scripts %}
 {% endblock %}
