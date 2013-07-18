@@ -24,7 +24,7 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
                 value = value.strftime('%d/%m/%Y %H:%M:%S')
         else:
             value = ''
-            
+
         lang = translation.get_language()
         lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
 
@@ -73,7 +73,7 @@ class BootstrapDateInput(forms.DateTimeInput):
                 value = value.strftime('%d/%m/%Y')
         else:
             value = ''
-            
+
         lang = translation.get_language()
         lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
 
@@ -89,6 +89,48 @@ class BootstrapDateInput(forms.DateTimeInput):
            $('#id_%(name)s').datetimepicker({
            language: '%(lang)s',
            pickTime: false,            // disables de time picker
+         });
+        });
+        </script>
+        ''' % {'name':name, 'value':value, 'lang': lang}
+
+        return mark_safe(output)
+
+class BootstrapTimeInput(forms.DateTimeInput):
+    class Media:
+        js = (
+            settings.STATIC_URL + 'bootstrap/js/bootstrap-datetimepicker.min.js',
+        )
+        css = {
+            'screen': (
+                settings.STATIC_URL + 'bootstrap/css/bootstrap-datetimepicker.min.css',
+            )
+        }
+
+    def render(self, name, value, attrs=None):
+        if value:
+            if isinstance(value, date):
+                value = datetime(value.year, value.month, value.day)
+            if isinstance(value, datetime):
+                value = value.strftime('%d/%m/%Y %H:%M:%S')
+        else:
+            value = ''
+
+        lang = translation.get_language()
+        lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
+
+        output = '''
+        <div id="id_%(name)s" class="input-append date" data-bootstrap-widget="datetimepicker">
+            <input value="%(value)s" name="%(name)s" data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+            <span class="add-on">
+                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+            </span>
+        </div>
+        <script type="text/javascript">
+        $(function() {
+           $('#id_%(name)s').datetimepicker({
+           language: '%(lang)s',
+           pickDate: false,            // disables the date picker
          });
         });
         </script>
